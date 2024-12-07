@@ -12,29 +12,9 @@ export default function IndexPage() {
         nextPhoto
     } = useRandomPhoto()
 
-    const [clockTransformX, setClockTransformX] = useState(50)
-    const [clockTransformY, setClockTransformY] = useState(50)
-
-    useEffect(() => {
-        const moveClock = () => {
-            const x = Math.floor(Math.random() * -100)
-            const y = Math.floor(Math.random() * -100)
-            setClockTransformX(x)
-            setClockTransformY(y)
-        }
-        moveClock()
-        const t = setInterval(moveClock, 1000 * 5)
-        return () => clearInterval(t)
-    }, [])
-
     return (
         <>
-            <div className={styles.dateTimeBox} 
-                style={{
-                    "--transform-x": `${clockTransformX}%`,
-                    "--transform-y": `${clockTransformY}%`
-                } as React.CSSProperties}
-            >
+            <div className={styles.dateTimeBox}>
                 <div>
                     <h1 className={styles.timeText}>{timeString}</h1>
                     <p className={styles.amPmText}>{amPmString}</p>
