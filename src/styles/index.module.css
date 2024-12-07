@@ -31,10 +31,9 @@
     width: fit-content;
     height: fit-content;
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 20px;
+    left: 40px;
     transition: 2s ease-in-out;
-    transform: translateX(-190%) translateY(-200%);
 }
 
 .dateTimeBox > div {
