@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google-cloud/storage": "^7.14.0",
     "@types/node": "22.10.1",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.1",
+    "fs": "^0.0.1-security",
+    "net": "^1.0.2",
     "next": "15.0.4",
+    "os": "^0.1.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "typescript": "5.7.2"

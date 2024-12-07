@@ -1,0 +1,54 @@
+.timeText {
+    font-size: 9rem;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+.dateText {
+    font-size: 3rem;
+    font-family: 'Parkinsans', sans-serif;
+    margin: 0;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+.amPmText {
+    font-size: 2rem;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    color: white;
+    text-shadow: 0 0 5px black;
+    margin-bottom: 12px;
+}
+
+.dateTimeBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.dateTimeBox > div {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+.photo {
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: contain;
+    background-color: black;
+}
