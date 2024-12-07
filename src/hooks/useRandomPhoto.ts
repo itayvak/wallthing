@@ -14,9 +14,9 @@ export const useRandomPhoto = () => {
     }
 
     const nextPhoto = () => {
-        console.log("a")
         if (allPhotoURLs.length > 0) {
             const randomUrl = allPhotoURLs[Math.floor(Math.random() * allPhotoURLs.length)]
+            console.log(randomUrl)
             setCurrentPhotoURL(randomUrl)
         }
     }
@@ -29,7 +29,7 @@ export const useRandomPhoto = () => {
 
     useEffect(() => {
         nextPhoto()
-        const t = setInterval(nextPhoto, 1000 * 10)
+        const t = setInterval(nextPhoto, 1000 * 30)
         return () => clearInterval(t)
     }, [allPhotoURLs])
 
