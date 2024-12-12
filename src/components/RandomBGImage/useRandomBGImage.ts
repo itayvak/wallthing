@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import {useState, useEffect} from "react";
 
-export const useRandomPhoto = () => {
+export const useRandomBGImage = () => {
     const [allPhotoURLs, setAllPhotoURLs] = useState<string[]>([])
     const [currentPhotoURL, setCurrentPhotoURL] = useState("")
 
