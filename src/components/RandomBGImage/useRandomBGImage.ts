@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useCallback} from "react";
 
 export const useRandomBGImage = () => {
     const [allPhotoURLs, setAllPhotoURLs] = useState<string[]>([])
@@ -22,7 +22,7 @@ export const useRandomBGImage = () => {
         return () => clearInterval(t)
     }, [])
 
-    const nextPhoto = () => {
+    const nextPhoto = useCallback(() => {
         // Start fading in the next photo
         setNextPhotoState("fade-in");
 
@@ -34,19 +34,21 @@ export const useRandomBGImage = () => {
             const randomUrl = allPhotoURLs[Math.floor(Math.random() * allPhotoURLs.length)];
             setNextPhotoURL(randomUrl);
         }, 2000); // 2 seconds for fade-in
-    };
+    }, [nextPhotoURL]);
 
+    // Automatic 10-second interval to switch photos
     useEffect(() => {
         const interval = setInterval(() => {
-            nextPhoto(); // Start the next photo switch
-        }, 1000 * switchEverySeconds); // delay between switches
+            nextPhoto(); // Automatically switch to the next photo
+        }, 10000); // 10 seconds delay between switches
 
         return () => clearInterval(interval); // Cleanup interval on unmount
-    }, [nextPhotoURL]); // Re-run when `nextPhotoURL` changes
+    }, [nextPhoto]); // Re-run when `nextPhoto` changes
 
     return {
         currentPhotoURL,
         nextPhotoURL,
         nextPhotoState,
+        nextPhoto
     }
 }

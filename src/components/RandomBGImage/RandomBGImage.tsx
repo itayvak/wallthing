@@ -6,14 +6,14 @@ export default function RandomBGImage() {
         currentPhotoURL,
         nextPhotoURL,
         nextPhotoState,
-        goToNextPhoto
+        nextPhoto
     } = useRandomBGImage()
 
     if(!currentPhotoURL) return  <></>
     else return (
         <>
-            <img className={styles.image} src={currentPhotoURL} alt="image"/>
-            <img className={`${styles.image} ${styles.nextImage} ${nextPhotoState == "fade-in" && styles.fadeIn}`} src={nextPhotoURL} alt="next-image"/>
+            <img onClick={nextPhoto} className={styles.image} src={currentPhotoURL} alt="image"/>
+            <img onClick={nextPhoto} className={`${styles.image} ${styles.nextImage} ${nextPhotoState == "fade-in" && styles.fadeIn}`} src={nextPhotoURL} alt="next-image"/>
         </>
     )
 }
