@@ -7,7 +7,7 @@
 }
 
 .dateText {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-family: 'Parkinsans', sans-serif;
     margin: 0;
     color: white;
@@ -30,8 +30,8 @@
     width: fit-content;
     height: fit-content;
     position: fixed;
-    top: 20px;
-    transition: 5s ease-in-out;
+    bottom: 20px;
+    transition: 3s ease-in-out;
 }
 
 .clockBox > div {
