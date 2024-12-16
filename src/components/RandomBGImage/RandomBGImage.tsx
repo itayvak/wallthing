@@ -1,19 +1,22 @@
 import {useRandomBGImage} from "./useRandomBGImage"
 import styles from "./RandomBGImage.module.css"
+import CrossfadeImage from "@/components/CrossfadeImage/CrossfadeImage";
 
 export default function RandomBGImage() {
     const {
         currentPhotoURL,
-        nextPhotoURL,
-        nextPhotoState,
-        nextPhoto
+        switchPhoto
     } = useRandomBGImage()
 
     if(!currentPhotoURL) return  <></>
     else return (
         <>
-            <img onClick={nextPhoto} className={styles.image} src={currentPhotoURL} alt="image"/>
-            <img onClick={nextPhoto} className={`${styles.image} ${styles.nextImage} ${nextPhotoState == "fade-in" && styles.fadeIn}`} src={nextPhotoURL} alt="next-image"/>
+            <CrossfadeImage
+                onClick={switchPhoto}
+                holderClassName={styles.imageHolder}
+                imageClassName={styles.image}
+                src={currentPhotoURL}
+            />
         </>
     )
 }
