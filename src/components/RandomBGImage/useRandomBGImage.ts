@@ -5,7 +5,7 @@ export const useRandomBGImage = () => {
     const [currentPhotoURL, setCurrentPhotoURL] = useState("")
 
     const bucketName = "wallthing_display-photos"
-    const switchEverySeconds = 10
+    const switchEverySeconds = 60
 
     const listPhotos = async () => {
         const res = await fetch(`https://storage.googleapis.com/storage/v1/b/${bucketName}/o`)
